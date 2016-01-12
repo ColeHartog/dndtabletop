@@ -119,7 +119,6 @@ angular.module('mainApp')
     
     $scope.$watch('tokens.length', function(newData, oldData){
         if(newData !== oldData){
-            console.log('something changed: ', newData);
             gameBoardService.makeDandR(newData);
         }
         

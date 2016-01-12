@@ -75,7 +75,7 @@ angular.module('mainApp')
                         $scope.errorMessage = 'Signed Up';
                         $scope.$apply();
                         alert('Sign Up Successful!');
-                        location.reload();
+                        $scope.logIn(data);
                         
                     }
                 });

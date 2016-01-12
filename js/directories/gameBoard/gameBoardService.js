@@ -50,10 +50,10 @@ angular.module('mainApp')
         tokens.$add({
             index: index,
             imageUrl: data,
-            width: '6%',
+            width: '5%',
             height: '9%',
-            top: '0%',
-            left: '0%',
+            top: '45%',
+            left: '45%',
             show: true,
             currentHP: currentHP,
             maxHP: maxHP,

@@ -528,10 +528,10 @@ button:hover {
 }
 
 .defaultImagesClass {
-    margin-top: .75vh;
-    margin-right: 1vw;
-    width: 9.5vw;
-    height: 2vh;
+    margin-top: 1vh;
+    width: 5.5vw;
+    height: 3vh;
+    margin-left: .75vw;
     display: inline-block;
     transition: all .05s linear;
     overflow: hidden;
@@ -748,6 +748,36 @@ button:hover {
   transform: scaleX(1);
 }
 
+
+
+.tokens.ng-enter {
+    animation: tokensEnter 1.75s ease-in;
+    position: relative;
+}
+
+@keyframes tokensEnter {
+    from{
+        opacity: 0;
+        top: -30%;
+        transform: rotateX(-1800deg) rotateY(-720deg) rotateZ(-720deg);
+        
+    }
+    60% {
+        top: 45%;
+        transform: rotateX(-720deg) rotateY(-720deg) rotateZ(-720deg);
+    }
+    70% {
+        top: 35%;
+    }
+    90% {
+        top: 45%;
+        transform: rotateX(-20deg) rotateY(-180deg) rotateZ(-360deg)
+    }
+    to {
+        opacity: 1;
+        top: 45%;
+    }
+}
 
 
 .messagePostdiv.ng-enter { 

@@ -10,6 +10,8 @@ angular.module('mainApp')
     
     $scope.cps = false;
     
+    gameBoardService.makeTokensDraggableResizable();
+    
     $scope.minormaxSwitch = function(){
         if($scope.cps === true){
             $scope.cps = false;
@@ -113,5 +115,14 @@ angular.module('mainApp')
     $scope.changeHPFontColor = function(colorChoice){
         $scope.HPFontColor = colorChoice;
     }
+    
+    
+    $scope.$watch('tokens.length', function(newData, oldData){
+        if(newData !== oldData){
+            console.log('something changed: ', newData);
+            gameBoardService.makeDandR(newData);
+        }
+        
+    })
     
 })

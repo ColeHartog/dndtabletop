@@ -2,8 +2,7 @@ angular.module('mainApp')
 .service('gameBoardService', function($firebaseArray, $firebaseObject){
     
     var firebaseRoot = 'https://chdndtabletop.firebaseio.com/';
-    
-    
+        
     this.minormaxSwitch = function(tof){
         
         if(tof === true){
@@ -60,7 +59,15 @@ angular.module('mainApp')
             maxHP: maxHP,
             hpPercent: ((currentHP/maxHP)*100).toString()+'%',
         });
+    }
+    
+    
+    
+    
+    
+    this.makeDandR = function(Length){
         
+        var index = Length - 1;
         
         setTimeout(function(){
         
@@ -84,12 +91,18 @@ angular.module('mainApp')
                 }
             })
         }, 100);
+        
     }
     
     
-    
-    
-    
+    this.makeTokensDraggableResizable = function(){
+        var tlength = tokens.length;
+        
+        for(var i = 0; i < tlength; i++){
+            this.makeDandR(i+1);
+        }
+        
+    }
     
     
     

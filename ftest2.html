@@ -1,0 +1,41 @@
+    
+    <link rel="stylesheet" type="text/css" href="farbtastic/farbtastic.css">
+    <script type="text/javascript" src="farbtastic/farbtastic.js"></script>
+ <script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+      
+    $('#picker').farbtastic('#color');
+      
+      var picker = $.farbtastic("#picker");
+      
+      picker.setColor('#B63AA8');
+      picker.linkTo(onColorChange);
+      
+      function onColorChange(color) {
+          $('#bgColorChoice').css({'background-color' : color});
+          $('#messageColorChoice').css({'background-color' : color});
+          $('#fontColorChoice').css({'color' : color});
+          
+      }
+      
+  });
+ </script>
+    
+    <div class="form-item" ng-show="false">
+        <input type="text" id="color" value="#123456">
+    </div>
+    <div id="picker"></div>
+
+
+<div id="bgColorChoice" class="colorChoiceDivs" ng-click="changeBgColor()">
+    <div class="colorChoicemessagediv" style="background-color: {{currentUser.mainColor}}; color: {{currentUser.color}}">background</div>
+</div>
+
+<div class="colorChoiceDivs" style="background-color: {{currentUser.bgColor}}" ng-click="changeMainColor()">
+    <div id="messageColorChoice" class="colorChoicemessagediv">foreground</div>
+</div>
+
+<div class="colorChoiceDivs" style="background-color: {{currentUser.bgColor}}" ng-click="changeFontColor()">
+    <div id="fontColorChoice"  class="colorChoicemessagediv" style="background-color: {{currentUser.mainColor}}">font color</div>
+</div>
+

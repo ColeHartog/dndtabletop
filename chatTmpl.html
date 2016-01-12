@@ -1,0 +1,15 @@
+<div id="chatBody" style="background-color:{{currentUser.bgColor}}">
+    <form autocomplete="off">
+        <input id="inputMessage" placeholder="Message ... Roll 4d6+3;" ng-model="newMessage" style="background-color:{{currentUser.mainColor}}; color:{{currentUser.color}}"><button id="submitMessageButt" ng-click="addNewMessage(newMessage)" ng-show="false">submit</button><img id="inputMessagePP" ng-src="{{currentUser.profilePic}}">
+    </form>
+    <div id="messageBox">
+        <div class="messagePostdiv" ng-repeat="message in messages.slice().reverse()" style="background-color:{{currentUser.mainColor}}; color:{{currentUser.color}}">
+            {{message.text}}
+            <br>
+            <div class="rolldiv" ng-show="message.roll">
+                {{message.roll}}
+            </div>
+            <img class="postedUserPic" ng-src="{{message.postedProfilePic}}">
+        </div>
+    </div>
+</div>

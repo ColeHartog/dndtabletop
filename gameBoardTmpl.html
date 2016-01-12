@@ -1,0 +1,18 @@
+<div id="gameBoard">
+    <img id="gameBoardBG" ng-src="{{bgImage.imageUrl}}" ng-click="selectToken({currentHP: 1, maxHP: 1, imageUrl: ''})">
+    
+    <div class="tokens" ng-repeat="token in tokens track by $index" id="token{{token.index}}" style="top:{{token.top}}; left:{{token.left}}; height:{{token.height}}; width:{{token.width}}" ng-class="{selectedToken: token === selectedToken}" ng-click="selectToken(token)" ng-show="token.show">
+        <img class="tokenBG" ng-src="{{token.imageUrl}}">
+        <div class="maxBars" ng-if="showHPBar === 'Hide'">
+            
+            <div class="currentBarsPurple" style="width: {{token.hpPercent}}"></div>
+            
+            <div class="currentBarsYellow" style="width: {{token.hpPercent}}"></div>
+            
+            <div class="currentBarsGreen" style="width: {{token.hpPercent}}"></div>
+            
+        </div>
+        <div ng-if="showHPText === 'Hide'" style="color: {{HPFontColor}};">{{token.currentHP}} / {{token.maxHP}}</div>
+    </div>
+    
+</div>

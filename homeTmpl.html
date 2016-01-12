@@ -1,0 +1,24 @@
+<div id="homeTmplBody">
+        <div id="joinIndiv" ng-click="showPop()" ng-show="!popUp">
+            Join The Game
+        </div>
+        <div id="login" ng-show="popUp">
+            <div id="cancelPop" ng-click="showPop()">x</div>
+            Email:
+            <br>
+            <input type="email" placeholder="example@email.com" ng-model="userInput.email" class="popUpInput">
+            <br><br>
+            Password:
+            <br>
+            <input type="password" placeholder="password" ng-model="userInput.password" class="popUpInput">
+            <br>
+            <div id="errmssg">
+                {{errorMessage}}
+            </div>
+            <div id="loginOrSignUpdiv">
+                <button class="LoSButt" ng-Click="signUp(userInput)">Sign Up</button>
+                <button class="LoSButt" ng-click="logIn(userInput)">Log In</button>
+            </div>
+            
+        </div>
+</div>

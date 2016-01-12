@@ -1,0 +1,19 @@
+<div id="settingsbody">
+    <div id="settingsDiv">
+        <div id="settingsProfilePicdiv">
+            <img id="settingsProfilePic" ng-src="{{currentUser.profilePic}}">
+        </div>
+        <div id="changeProfilePicdiv">
+            <input ng-model="newProfilePicUrl" placeholder="New Profile Picture Url" id="newPPurl"><button id="newPPurlButt" ng-click="changeProfilePicture(newProfilePicUrl)">Submit</button>
+        </div>
+        
+        
+        <farbtastic-dir></farbtastic-dir>
+                
+        
+        <div class="settingButts hvr-sweep-to-right" ng-click="gameTime()">Game Time</div>
+        <div class="settingButts hvr-sweep-to-left" ng-click="logOut()">Log Out</div>
+        
+    </div>
+    
+</div>

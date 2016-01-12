@@ -1,0 +1,59 @@
+<div id="controlPanel" style="background-color:{{currentUser.bgColor}}">
+    <div id="minmaxcon" ng-click="minormaxSwitch()">
+        <i id="momicon" class="fa fa-angle-double-up"></i>
+    </div>
+    
+    
+    <div id="controlPanelmain" ng-show="cps">
+    
+        
+        <div id="controlPanelBGspace">
+            <input id="controlPanelBGInput" placeholder="New BackgroundUrl..." ng-model="newBgUrl"><button id="controlPanelBGsubmitButt" ng-click="changeBg(newBgUrl)">Submit</button>
+            
+            <div class="defaultImagesClass" ng-repeat="image in defaultImages track by $index" ng-click="changeBg(image.$value)">
+                <img class="defaultImagesImage" ng-src="{{image.$value}}">
+            </div>
+        </div>
+    
+        <div id="controlPanelTokenSpace">
+            <div id="TokenSpaceButtons">
+                <input id="newTokenUrlInput" ng-model="newTokenUrl" placeholder="Token Image Url..."><button id="newTokenUrlInputButt" ng-click="addNewToken(newTokenUrl, currentHPInput, maxHPInput)">Add Token</button>
+                <br>
+                
+                <div id="hpInputDiv">
+                    HP: <input class="HPInput" ng-model="currentHPInput"> / <input class="HPInput" ng-model="maxHPInput"><div id="updateHPbutt" class="hvr-sweep-to-right" ng-click="updateHP()">Update</div>
+                </div>
+                
+            </div>
+            
+            <div id="TokenSpacePreview">
+                <div id="TokenPrviewImgDiv">
+                    <img id="TokenPreviewImg" ng-src="{{newTokenUrl || selectedToken.imageUrl || 'https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/help.png'}}">
+                </div>
+                
+                <div id="showHPsdiv">
+                    
+                    <div id="showhidetext" class="shdivs hvr-sweep-to-right" ng-click="showHideHPText()">{{showHPText}} Text</div>
+                    <div id="black" class="HPfontColorDiv" ng-click="changeHPFontColor('black')"></div>
+                    <div id="white" class="HPfontColorDiv" ng-click="changeHPFontColor('white')"></div>
+                    
+                </div>
+                
+                <div id="rmbuttsdiv">
+                    <div id="showhidebar" class="shdivs hvr-sweep-to-right" ng-click="showHideHPBar()">{{showHPBar}} Bar</div>
+                    <br>
+                    <div id="removeSTdiv" class="shdivs hvr-sweep-to-right" ng-click="removeSelectedToken()">Remove Selected</div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="controlPanelMessagesSpace">
+            <div id="removeAlldiv" class="hvr-sweep-to-right" ng-click="removeAllTokens()">Clear Board</div>
+            
+            <div id="clearMessages" class="hvr-sweep-to-right" ng-click="eraseMessages()">Erase Messages</div>
+        </div>
+    
+    </div>
+
+</div>

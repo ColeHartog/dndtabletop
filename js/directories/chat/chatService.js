@@ -42,12 +42,15 @@ angular.module('mainApp')
         
     };
     
+    var DiceSound = new Audio('./images/DiceRoll.mp3');
+    DiceSound.volume = .5;
     
     this.Roll = function(data){
         var total = 0;
         for(var i = 0; i < data[0]; i++){
             total += Math.floor(Math.random()*(data[1])) + 1;
         }
+        DiceSound.play();
         return total;
     };
     

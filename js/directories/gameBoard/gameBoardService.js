@@ -98,8 +98,8 @@ angular.module('mainApp')
     this.makeTokensDraggableResizable = function(){
         var tlength = tokens.length;
         
-        for(var i = 0; i < tlength; i++){
-            this.makeDandR(i+1);
+        for(var i = 0; i <= tlength; i++){
+            this.makeDandR(i);
         }
         
     }

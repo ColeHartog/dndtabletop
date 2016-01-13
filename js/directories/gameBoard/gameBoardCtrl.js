@@ -10,7 +10,9 @@ angular.module('mainApp')
     
     $scope.cps = false;
     
-    gameBoardService.makeTokensDraggableResizable();
+    setTimeout(function(){
+        gameBoardService.makeTokensDraggableResizable();
+    }, 200);
     
     $scope.minormaxSwitch = function(){
         if($scope.cps === true){

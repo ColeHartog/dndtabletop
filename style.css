@@ -67,7 +67,7 @@ button:hover {
     font-size: 5vh;
     font-weight: bold;
     color: white;
-    background-color: rgba(127, 127, 127, 0.5);
+    background-color: rgba(127, 127, 127, 0.65);
     width: 30vw;
     min-height: 10vh;
     padding: 2vh;
@@ -76,8 +76,6 @@ button:hover {
 
 #joinIndiv:hover {
     cursor: pointer;
-    transition: all 1s ease;
-    background-color: rgba(127, 127, 127, 1);
 }
 
 #tableTopBody {
@@ -149,7 +147,7 @@ button:hover {
     margin: 1vh .5vw 2vh .5vw;
     padding: .5vw 1vw;
     border-radius: 1vw 1vw 0 1vw;
-    box-shadow: 5px 5px 5px gray;
+    box-shadow: 5px 5px 5px rgba(0,0,0,.5);
 }
 
 ::-webkit-scrollbar {
@@ -650,6 +648,7 @@ button:hover {
 
 #black {
     background-color: black;
+    outline: 1px solid white;
 }
 
 #white {

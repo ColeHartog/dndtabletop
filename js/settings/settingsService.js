@@ -8,7 +8,8 @@ angular.module('mainApp')
     this.changeProfilePicture = function(data, cu){
         var index = users.$indexFor(cu.id);
         (new Firebase(ref + 'users/' + cu.id)).update({profilePic: data});
-        return users[cu.index].profilePic;    
+        console.log(users[index]);
+        return users[index].profilePic;    
     }
     
     
